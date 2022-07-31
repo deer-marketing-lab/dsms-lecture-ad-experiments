@@ -1,5 +1,5 @@
 ---
-title: "MODULE NAME"
+title: "Search Engine Marketing"
 subtitle: "Digital and Social Media Strategies"
 author: "Lachlan Deer"
 institute: "Tilburg University"
@@ -20,14 +20,295 @@ class: font200
 TBD
 
 ---
-class: inverse, center, middle
+# John Wanamaker Redux
 
-# Section XX
+```{r, echo = FALSE, fig.align = "center", out.width="100%"}
+url <- "figs/wanamaker.png"
+knitr::include_graphics(url)
+```
 
 ---
-# Slide Title 
+# Search Engine Ads - Google 
 
-course content here
+
+```{r, echo = FALSE, fig.align = "center", out.width="70%"}
+url <- "figs/google_sem.png"
+knitr::include_graphics(url)
+```
+
+---
+# Search Engine Ads - Amazon 
+
+```{r, echo = FALSE, fig.align = "center", out.width="60%"}
+url <- "figs/amazon_sem.png"
+knitr::include_graphics(url)
+```
+
+---
+# Search Engine Ads - Yelp
+
+```{r, echo = FALSE, fig.align = "center", out.width="55%"}
+url <- "figs/yelp_sem.png"
+knitr::include_graphics(url)
+```
+
+---
+# Search Engine Marketing
+
+
+```{r, echo = FALSE, fig.align = "center", out.width="90%"}
+url <- "figs/sem_defined.png"
+knitr::include_graphics(url)
+```
+
+---
+# SEM Expenditure Growth
+
+```{r, echo = FALSE, fig.align = "center", out.width="55%"}
+url <- "https://cdn.searchenginejournal.com/wp-content/uploads/2020/11/781f4599-8201-4295-b3c7-ebe1eb1afa85-5fac4602d2da9.png"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [emarketer](https://www.insiderintelligence.com/content/pandemic-promises-search-ad-spending-short-term-pain-long-term-gain)
+]
+
+---
+# SEM Expenditure by Company
+
+```{r, echo = FALSE, fig.align = "center", out.width="70%"}
+url <- "https://www.insiderintelligence.com/content/storage/7372ab1321bfc5eabd8af3a096e74c5e/259349"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [emarketer](https://www.insiderintelligence.com/content/pandemic-promises-search-ad-spending-short-term-pain-long-term-gain)
+]
+
+---
+# Business Problem
+
+**Seeking Answers to the following strategic questions**
+
+* Are Brand based SEM ads effective at bringing traffic to my site?
+* Are non-Brand based SEM ads effectice at generating sales?
+* Are the effects heterogenous across consumers or companies?
+
+Data Driven answers: 
+
+* Randomized Control Trials 
+* Shutdown search engine ads
+* Evaluate the effects using Difference in Differences
+
+---
+class: inverse, center, middle
+# How Are Search Ads Placed?
+
+---
+# Overview of the AdWords process
+
+
+```{r, echo = FALSE, fig.align = "center", out.width="70%"}
+url <- "https://www.digitalvidya.com/wp-content/uploads/2018/01/How-Google-Knows-Which-Ads-to-Display-leadsquared.png"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [Digital Vidya](https://www.digitalvidya.com/blog/google-adwords-tutorial/)
+]
+
+---
+# Overview of the AdWords process
+
+```{r, echo = FALSE, fig.align = "center", out.width="70%"}
+url <- "https://www.surefiresearch.com/wp-content/uploads/2015/11/How-does-AdWords-Work.png"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [Sure Fire Research](https://www.surefiresearch.com/news/how-google-adwords-auctions-actually-work/)
+]
+
+---
+# Which Ad is Shown?
+
+```{r, echo = FALSE, fig.align = "center", out.width="70%"}
+url <- "https://www.digitalvidya.com/wp-content/uploads/2018/01/How-Google-Decides-which-Ad-should-be-shown-and-where-wordstream.jpg"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [Digital Vidya](https://www.digitalvidya.com/blog/google-adwords-tutorial/)
+]
+
+What is Cost per Click? See [here](https://advertising.amazon.com/library/guides/cost-per-click?)
+
+---
+# How Much is Paid?
+
+```{r, echo = FALSE, fig.align = "center", out.width="70%"}
+url <- "https://www.digitalvidya.com/wp-content/uploads/2018/01/Google-AdWords-Infographics-Wordstream.jpg"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [Digital Vidya](https://www.digitalvidya.com/blog/google-adwords-tutorial/)
+]
+
+---
+class: inverse, center, middle
+
+# Paid Search Effectiveness
+
+---
+# Are Paid Search Ads Effective?
+
+**Motivation**: Is Search Engine Marketing Effective?
+
+**Specific Questions**: 
+
+* Does SEM generate a positive Return on Investment?
+* Is SEM an informative or persuasive form of advertsing?
+
+**How?**
+
+* Controlled Experiments at eBay
+
+Discussion Below draws from [Blake, Nosko and Tadelis](https://doi.org/10.3982/ECTA12423)
+
+---
+# Paid Search Ads - The 2012 edition
+
+```{r, echo = FALSE, fig.align = "center", out.width="90%"}
+url <- "figs/google_sem_nosko.png"
+knitr::include_graphics(url)
+```
+
+---
+# Brand Search Terms Experiment
+
+**Brand Terms**: any queries that include the name of the brand 
+
+* Examples: 'ebay shoes', 'de bijenkorf dress',
+
+* Hypothesis: Users why type the brand name intend to go to that site anyway 
+  * $\implies$ brand ads are intercepting what would otherwise be organic clicks
+
+* Experiments: 
+  * Experiment 1 (March to June 2012): Shutdown brand ads on MSN and Yahoo!
+  * Experiment 2 (July 2012): Shutdown brand ads on Google 
+
+---
+# Brand Search Terms Eyeconometrics
+
+
+```{r, echo = FALSE, fig.align = "center", out.width="90%"}
+url <- "figs/branded_search_fig.png"
+knitr::include_graphics(url)
+```
+
+* 99.5 % of click traffic is retained!
+---
+# Non-Brand Search Terms
+
+**Non-Brand Search terms**: queries that do not include the name of the brand 
+
+* Examples: 'shoes', 'long dress'
+
+* Key difference: Users might not know product is available at a advertiser's website
+
+* Hypothesis: Non brand ads steer consumers to advertiser's site 
+
+* Experiment: Large scale Randomized Control Trial
+  * Suspend non-brand ads in 30% of all DMAs in USA 
+  * Control vs Test Split chosen via an algorithm
+  * DMA: region of the US, roughly equivalent to a metro area
+
+---
+# Non-Brand Search Terms Eyeconometrics
+
+```{r, echo = FALSE, fig.align = "center", out.width="90%"}
+url <- "figs/nonbranded_search_fig.png"
+knitr::include_graphics(url)
+```
+
+---
+# Non-Brand Search Terms Econometrics 
+
+Outcome of interest: Attributed Sales 
+
+Method: Difference in Differences
+
+$$
+\ln(\textSales_it) = \beta_0 + \beta_1 \text{Treatment Group}_i + \beta_2 {Post}_t + \delta \text{Treatment Group}_i \times {Post}_t + \text{Fixed Effects} + \varepsilon_{it}
+$$
+
+**Coefficient of Interest**: \delta 
+
+* (Why?)
+* (How to Interpret?)
+
+Note: Authors only report $\delta$ in the regression table 
+
+---
+# Non Brand Search Terms Results 
+
+```{r, echo = FALSE, fig.align = "center", out.width="90%"}
+url <- "figs/nonbranded_search_table.png"
+knitr::include_graphics(url)
+```
+
+---
+# Consumer Heterogeneity 
+
+```{r, echo = FALSE, fig.align = "center", out.width="90%"}
+url <- "figs/heterogeniety.png"
+knitr::include_graphics(url)
+```
+
+---
+# Main Takeaways 
+
+* Ads served via Brand Search terms are, on average, ineffective at bringing clicks to site 
+* Ads served via Non-Brand Search terms are, on average, do not generate sales 
+* Non-Brand Search terms might be effective for:
+  * Consumers who do not purchase frequently on site 
+  * Consumers who haven't purchased in a long time
+
+Results are suggestive of Search Engine Ads being **informative**
+
+* Discussion Q: Are the consumers for whom ads might be effective usually the type of consumers a firm would advertise to?
+
+---
+# Generalizability of Results?
+
+How generalizable are the eBay results? 
+
+* [Coviello, Gneezy and Goette (2017)](https://www.econstor.eu/bitstream/10419/171148/1/cesifo1_wp6684.pdf) run the same experiments for a 'more representative company'
+  * Company: [Edmunds](https://www.edmunds.com/)  
+  * Experiment: Shutdown branded keyword ads on Yahoo and Bing
+    * Split markets into 'Treatment' and 'Control'
+  * Analysis: Difference in Differences 
+
+---
+# Generalizability of Results?
+
+```{r, echo = FALSE, fig.align = "center", out.width="90%"}
+url <- "figs/ebay_generalizability.png"
+knitr::include_graphics(url)
+```
+
+Result: 5.6 percentage point reduction in total traffic
+
+---
+class: inverse, center, middle
+
+# Recap
+
+---
+# Summary
+
+
 
 ---
 # License & Citation
