@@ -13,11 +13,14 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
-class: font200
+class: font160
 
 # Learning Goals for this Week
 
-TBD
+* Define Search Engine advertising 
+* Explain how ads are chosen to appear on a search engine site 
+* Design an experiment to test the effectiveness of Search Engine Ads
+* Interpret the results of an experiment that evaluates the effectiveness of search engine ads
 
 ---
 # John Wanamaker Redux
@@ -62,6 +65,22 @@ knitr::include_graphics(url)
 ```
 
 ---
+class: font160
+# SEM is Big Business!
+
+Some interesting **stylized facts**: 
+
+* 80% of global internet users are reached by Google Adwords Display campaigns.
+* 97% of mobile search spend comes from Google Adwords.
+* 48% of digital ad spend is paid search.
+* Over 50% of people who search on Google cannot differentiate Paid from Organic entries.
+* Google Adwords represents 41% of the world’s $225 billion per year in digital ad spend.
+* Amazon is the largest Google Adwords advertiser.
+
+Source: [BarnRaisers LLC](https://barnraisersllc.com/2018/05/13/google-adwords-stats-marketing-strategy/)
+
+
+---
 # SEM Expenditure Growth
 
 ```{r, echo = FALSE, fig.align = "center", out.width="55%"}
@@ -86,19 +105,21 @@ Source: [emarketer](https://www.insiderintelligence.com/content/pandemic-promise
 ]
 
 ---
+class: font160
 # Business Problem
 
-**Seeking Answers to the following strategic questions**
+**Seeking answers to the following strategic questions:**
 
+* How does my company get featured as a search engine ad?
 * Are Brand based SEM ads effective at bringing traffic to my site?
 * Are non-Brand based SEM ads effectice at generating sales?
 * Are the effects heterogenous across consumers or companies?
 
-Data Driven answers: 
+**Data Driven answers** (to the last three): 
 
 * Randomized Control Trials 
 * Shutdown search engine ads
-* Evaluate the effects using Difference in Differences
+* Evaluate the effects using *Difference in Differences*
 
 ---
 class: inverse, center, middle
@@ -107,53 +128,146 @@ class: inverse, center, middle
 ---
 # Overview of the AdWords process
 
-
-```{r, echo = FALSE, fig.align = "center", out.width="70%"}
-url <- "https://www.digitalvidya.com/wp-content/uploads/2018/01/How-Google-Knows-Which-Ads-to-Display-leadsquared.png"
+```{r, echo = FALSE, fig.align = "center", out.width="75%"}
+url <- "figs/adwords_01_query.png"
 knitr::include_graphics(url)
 ```
 
 .right[
-Source: [Digital Vidya](https://www.digitalvidya.com/blog/google-adwords-tutorial/)
+Source: [BarnRaisers LLC](https://barnraisersllc.com/2018/05/13/google-adwords-stats-marketing-strategy/)
 ]
 
 ---
 # Overview of the AdWords process
 
-```{r, echo = FALSE, fig.align = "center", out.width="70%"}
-url <- "https://www.surefiresearch.com/wp-content/uploads/2015/11/How-does-AdWords-Work.png"
+```{r, echo = FALSE, fig.align = "center", out.width="75%"}
+url <- "figs/adwords_02_keywords.png"
 knitr::include_graphics(url)
 ```
 
 .right[
-Source: [Sure Fire Research](https://www.surefiresearch.com/news/how-google-adwords-auctions-actually-work/)
+Source: [BarnRaisers LLC](https://barnraisersllc.com/2018/05/13/google-adwords-stats-marketing-strategy/)
 ]
 
 ---
-# Which Ad is Shown?
+# Overview of the AdWords process
 
-```{r, echo = FALSE, fig.align = "center", out.width="70%"}
-url <- "https://www.digitalvidya.com/wp-content/uploads/2018/01/How-Google-Decides-which-Ad-should-be-shown-and-where-wordstream.jpg"
+```{r, echo = FALSE, fig.align = "center", out.width="75%"}
+url <- "figs/adwords_02_keywords.png"
 knitr::include_graphics(url)
 ```
 
 .right[
-Source: [Digital Vidya](https://www.digitalvidya.com/blog/google-adwords-tutorial/)
+Source: [BarnRaisers LLC](https://barnraisersllc.com/2018/05/13/google-adwords-stats-marketing-strategy/)
 ]
 
-What is Cost per Click? See [here](https://advertising.amazon.com/library/guides/cost-per-click?)
+**Remark**:
+
+* We're focusing on Google AdWords (now Google Ads)
+* ... but the ideas here generalize to other search engines
 
 ---
-# How Much is Paid?
+# Overview of the AdWords process
 
-```{r, echo = FALSE, fig.align = "center", out.width="70%"}
-url <- "https://www.digitalvidya.com/wp-content/uploads/2018/01/Google-AdWords-Infographics-Wordstream.jpg"
+```{r, echo = FALSE, fig.align = "center", out.width="75%"}
+url <- "figs/adwords_03_ad_rank.png"
 knitr::include_graphics(url)
 ```
 
 .right[
-Source: [Digital Vidya](https://www.digitalvidya.com/blog/google-adwords-tutorial/)
+Source: [BarnRaisers LLC](https://barnraisersllc.com/2018/05/13/google-adwords-stats-marketing-strategy/)
 ]
+
+---
+# Overview of the AdWords process
+
+```{r, echo = FALSE, fig.align = "center", out.width="75%"}
+url <- "figs/adwords_04_position.png"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [BarnRaisers LLC](https://barnraisersllc.com/2018/05/13/google-adwords-stats-marketing-strategy/)
+]
+
+---
+# Overview of the AdWords process
+
+```{r, echo = FALSE, fig.align = "center", out.width="75%"}
+url <- "figs/adwords_05_payment.png"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [BarnRaisers LLC](https://barnraisersllc.com/2018/05/13/google-adwords-stats-marketing-strategy/)
+]
+
+---
+# Cost per click & Others 
+
+Three options for bids:
+
+1. **Cost-per-click (CPC)** 
+  * How much you pay when a user clicks on your ad.
+2. **Cost-per-mille (CPM)** 
+  * How much you pay per 1000 ad impressions.
+3. **Cost-per-engagement (CPE)**
+  * How much you pay when a user performs a specific action on your ad (signs up for a list, watch a video, etc).
+
+Remarks: 
+
+* Search Engine maps each of these into a comparable number for the auction
+* The average cost-per-click in the United States is typically between $1 and $2.
+
+---
+# Cost per Click across Industries
+
+```{r, echo = FALSE, fig.align = "center", out.width="80%"}
+url <- "figs/cpc_industry.png"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [WordStream](https://www.wordstream.com/blog/ws/2015/05/21/how-much-does-adwords-cost)
+]
+
+---
+# Cost per Click within the US
+
+```{r, echo = FALSE, fig.align = "center", out.width="90%"}
+url <- "https://www.wordstream.com/wp-content/uploads/2021/07/map_cpc_by_state.png"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [WordStream](https://www.wordstream.com/blog/ws/2015/06/09/ppc-costs)
+]
+
+---
+# Cost per Click - Global Perspective
+
+```{r, echo = FALSE, fig.align = "center", out.width="100%"}
+url <- "https://www.wordstream.com/wp-content/uploads/2021/07/average-cpc-by-country1-1.png"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [WordStream](https://www.wordstream.com/blog/ws/2015/07/06/average-cost-per-click)
+]
+
+
+---
+# Comparing Different Platforms
+
+```{r, echo = FALSE, fig.align = "center", out.width="65%"}
+url <- "https://www.wordstream.com/wp-content/uploads/2022/02/how-much-do-google-ads-cost-covid-impact.png"
+knitr::include_graphics(url)
+```
+
+.right[
+Source: [WordStream](https://www.wordstream.com/blog/ws/2015/05/21/how-much-does-adwords-cost)
+]
+
 
 ---
 class: inverse, center, middle
@@ -161,6 +275,7 @@ class: inverse, center, middle
 # Paid Search Effectiveness
 
 ---
+class: font160
 # Are Paid Search Ads Effective?
 
 **Motivation**: Is Search Engine Marketing Effective?
@@ -185,6 +300,7 @@ knitr::include_graphics(url)
 ```
 
 ---
+class: font160
 # Brand Search Terms Experiment
 
 **Brand Terms**: any queries that include the name of the brand 
@@ -199,23 +315,26 @@ knitr::include_graphics(url)
   * Experiment 2 (July 2012): Shutdown brand ads on Google 
 
 ---
+class: font160
 # Brand Search Terms Eyeconometrics
 
 
-```{r, echo = FALSE, fig.align = "center", out.width="90%"}
+```{r, echo = FALSE, fig.align = "center", out.width="100%"}
 url <- "figs/branded_search_fig.png"
 knitr::include_graphics(url)
 ```
 
 * 99.5 % of click traffic is retained!
+
 ---
+class: font160
 # Non-Brand Search Terms
 
 **Non-Brand Search terms**: queries that do not include the name of the brand 
 
 * Examples: 'shoes', 'long dress'
 
-* Key difference: Users might not know product is available at a advertiser's website
+* **Key difference**: Users might not know product is available at a advertiser's website
 
 * Hypothesis: Non brand ads steer consumers to advertiser's site 
 
@@ -227,7 +346,7 @@ knitr::include_graphics(url)
 ---
 # Non-Brand Search Terms Eyeconometrics
 
-```{r, echo = FALSE, fig.align = "center", out.width="90%"}
+```{r, echo = FALSE, fig.align = "center", out.width="100%"}
 url <- "figs/nonbranded_search_fig.png"
 knitr::include_graphics(url)
 ```
@@ -235,20 +354,29 @@ knitr::include_graphics(url)
 ---
 # Non-Brand Search Terms Econometrics 
 
-Outcome of interest: Attributed Sales 
+**Outcome of Interest**: Attributed Sales 
 
-Method: Difference in Differences
+**Method**: Difference in Differences
 
 $$
-\ln(\textSales_it) = \beta_0 + \beta_1 \text{Treatment Group}_i + \beta_2 {Post}_t + \delta \text{Treatment Group}_i \times {Post}_t + \text{Fixed Effects} + \varepsilon_{it}
+\begin{aligned}
+\ln(\text{Sales}_{it}) = \beta_0 &+ \beta_1 \text{Treatment Group}_i + \beta_2 {Post}_t \\
+  & + \delta \text{Treatment Group}_i \times {Post}_t + \text{Fixed Effects} + \varepsilon_{it}
+\end{aligned}
 $$
 
-**Coefficient of Interest**: \delta 
+* $i$ is a DMA (region) of the US 
+* $t$ is time (calendar date)
 
-* (Why?)
+**Coefficient of Interest**: $\delta$ 
+
+Discussion Questions:
+
+* (Why is $\delta$ the coefficinet of interest?)
 * (How to Interpret?)
+* (How does this framework compare to an A/B test?)
 
-Note: Authors only report $\delta$ in the regression table 
+**Note**: Authors only report $\delta$ in the regression table 
 
 ---
 # Non Brand Search Terms Results 
@@ -267,22 +395,26 @@ knitr::include_graphics(url)
 ```
 
 ---
+class: font160
 # Main Takeaways 
 
-* Ads served via Brand Search terms are, on average, ineffective at bringing clicks to site 
-* Ads served via Non-Brand Search terms are, on average, do not generate sales 
-* Non-Brand Search terms might be effective for:
-  * Consumers who do not purchase frequently on site 
-  * Consumers who haven't purchased in a long time
+* Ads served via **Brand Search terms** are, **on average**, **ineffective** at bringing clicks to site 
+* Ads served via **Non-Brand Search terms** are, **on average**, **do not generate sales** 
+* **Non-Brand Search terms** **might be** effective for:
+  * Consumers who **do not purchase frequently** on site 
+  * Consumers who **haven't purchased in a long time**
 
 Results are suggestive of Search Engine Ads being **informative**
 
-* Discussion Q: Are the consumers for whom ads might be effective usually the type of consumers a firm would advertise to?
+**Discussion Q:** 
+
+* Are the consumers for whom ads might be effective usually the type of consumers a firm would advertise to?
 
 ---
+class: font160
 # Generalizability of Results?
 
-How generalizable are the eBay results? 
+How **generalizable** are the eBay results? 
 
 * [Coviello, Gneezy and Goette (2017)](https://www.econstor.eu/bitstream/10419/171148/1/cesifo1_wp6684.pdf) run the same experiments for a 'more representative company'
   * Company: [Edmunds](https://www.edmunds.com/)  
@@ -291,6 +423,7 @@ How generalizable are the eBay results?
   * Analysis: Difference in Differences 
 
 ---
+class: font160
 # Generalizability of Results?
 
 ```{r, echo = FALSE, fig.align = "center", out.width="90%"}
@@ -298,7 +431,7 @@ url <- "figs/ebay_generalizability.png"
 knitr::include_graphics(url)
 ```
 
-Result: 5.6 percentage point reduction in total traffic
+Result: **5.6 percentage point reduction in total traffic**
 
 ---
 class: inverse, center, middle
@@ -306,8 +439,21 @@ class: inverse, center, middle
 # Recap
 
 ---
+class: font140
 # Summary
 
+**How Are Search Engine Ads placed?**
+
+* Displayed Search Engine Ads are the result of an auction between competing advertisers 
+* Ad Ranks in auctions are the combination of a cost (per click) and a quality score 
+* Ad prices are a function of the 2nd best bid's price and the winner's quality score
+
+**Are Search Engine Ads Effective?**
+
+* Evidence from experiments run by Ebay suggest on average search engine ads have a negative return on investment 
+* ... Because on average they don't generate additional sales 
+* But this effect might not be true for all firms 
+  * We need more evidence ...
 
 
 ---
@@ -317,10 +463,10 @@ Suggested Citation:
 
 ```{r, engine='out', eval = FALSE}
 @misc{deerdsms2022,
-      title={"Digital and Social Media Strategies: Lecture Slide Template"},
+      title={"Digital and Social Media Strategies: Search Engine Marketing"},
       author={Lachlan Deer},
       year={2022},
-      url = "https://github.com/tisem-digital-marketing/dsms-lecture-template"
+      url = "https://github.com/tisem-digital-marketing/dsms-lecture-06-sem"
 }
 ```
 
