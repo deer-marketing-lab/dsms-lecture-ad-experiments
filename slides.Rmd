@@ -307,7 +307,7 @@ class: font160
 
 * Examples: 'ebay shoes', 'de bijenkorf dress',
 
-* Hypothesis: Users why type the brand name intend to go to that site anyway 
+* Hypothesis: Users who type the brand name intend to go to that site anyway 
   * $\implies$ brand ads are intercepting what would otherwise be organic clicks
 
 * Experiments: 
@@ -372,7 +372,7 @@ $$
 
 Discussion Questions:
 
-* (Why is $\delta$ the coefficinet of interest?)
+* (Why is $\delta$ the coefficient of interest?)
 * (How to Interpret?)
 * (How does this framework compare to an A/B test?)
 
