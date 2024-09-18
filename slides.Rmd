@@ -896,7 +896,7 @@ Suggested Citation:
                in Advertising"},
       author={Lachlan Deer},
       year={2024},
-      url = "https://github.com/deer-marketing-lab/dsms-lecture-incrementalityexp"
+      url = "https://github.com/deer-marketing-lab/dsms-lecture-ad-experiments"
 }
 ```
 
